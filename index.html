@@ -1,0 +1,169 @@
+<html>
+<header>
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+</header>
+
+<body>
+    <div class="Container">
+        <main>
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fundo_Header">
+
+            </header>
+            <div class="container">
+                <div class="p-5 bg-body-tertiary rounded-3 row">
+                    <div class="col divisao" id="modCadPacientes">
+                        <h3>Consulta Situação Cardíaca de Paciente</h3>
+                        <form method="post" id="formCadPacientes">
+                            <div class="form-group">
+                                <label class="col-form-label" for="name">Nome do paciente: </label>
+                                <input class="form-control form-control-sm" type="text" name="name" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="age">Idade do paciente: </label>
+                                <input class="form-control form-control-sm" type="text" name="age" id="age">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Chest_pain_typ">Sexo: </label>
+                                <select class="form-control form-control-sm" name="Sex" id="Sex">
+                                    <option value="0">Feminino</option>
+                                    <option value="1">Masculino</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Chest_pain_typ">Nível de dor no peito: </label>
+                                <select class="form-control form-control-sm" name="Chest_pain_typ" id="Chest_pain_typ">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="BP">Pressão arterial em repouso: </label>
+                                <input class="form-control form-control-sm" type="number" name="BP" id="BP">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Cholesterol">Colesterol: </label>
+                                <input class="form-control form-control-sm" type="number" name="Cholesterol"
+                                    id="Cholesterol">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="FBS_over">Açúcar no sangue em jejum acima de 120:
+                                </label>
+                                <select class="form-control form-control-sm" name="FBS_over_120" id="FBS_over_120">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-form-label" for="EKG_results">Resultados eletrocardiográficos em
+                                    repouso: </label>
+                                <select class="form-control form-control-sm" name="EKG_results" id="EKG_results">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-form-label" for="Max_HR">Freqüência cardíaca máxima alcançada </label>
+                                <input class="form-control form-control-sm" type="number" name="Max_HR" id="Max_HR">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Exercise_angina">Angina induzida pelo exercício:
+                                </label>
+                                <select class="form-control form-control-sm" name="Exercise_angina"
+                                    id="Exercise_angina">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="ST_depression">VLR de pressão baixa pelo
+                                    exercício em relação ao descanso: </label>
+                                <input class="form-control form-control-sm" type="number" name="ST_depression"
+                                    id="ST_depression">
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Slope_of_ST">Máximo de frequencia cardiaca em
+                                    exercício: </label>
+                                <input class="form-control form-control-sm" type="number" name="Slope_of_ST"
+                                    id="Slope_of_ST">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Number_of_vessels_fluro">Número de vasos sanquineos
+                                    escuros:
+                                </label>
+                                <input class="form-control form-control-sm" type="number" name="Number_of_vessels_fluro"
+                                    id="Number_of_vessels_fluro">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" for="Thallium">Teste de estresse do tálio:</label>
+                                <input class="form-control form-control-sm" type="number" name="Thallium" id="Thallium">
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="button" id="btnCadPacientes" value="Consultar" class="btn btn-primary">
+                                </div>
+                            </div>
+                        </form>
+                        <span class="alerta"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Container">
+                <div class="p-5 bg-body-tertiary rounded-3 row">
+                    <div class="col divisao">
+                        <h3>Lista de Pacientes consultados</h3>
+                        <table id="Paciente" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                    <th>Sexo</th>
+                                    <th>Nível dor peito</th>
+                                    <th>P.A. em repouso</th>
+                                    <th>Colesterol</th>
+                                    <th>Glicose em jejum + 120</th>
+                                    <th>Eletro em repouso</th>
+                                    <th>F.C. máxima</th>
+                                    <th>Angina</th>
+                                    <th>Presão baixa repouso:</th>
+                                    <th>F.C em exercício</th>
+                                    <th>Vasos escuros</th>
+                                    <th>Estresse</th>
+                                    <th>Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dadosPaciente">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                Rodapé
+            </footer>
+        </main>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
+<!--<script src="scripts/jquery.js"></script>-->
+<script src="scripts/scripts.js"></script>
+
+</html>
